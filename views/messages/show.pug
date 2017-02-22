@@ -1,0 +1,13 @@
+extends ../application
+
+block content
+  .container
+    .card.card-block
+      .row
+        .col-md-4.hidden-md-down
+        .col-xs-12.col-md-8
+          h2= message.title
+          h5= message.body
+          .row
+            .col-xs-3
+              form(action="/messages/" + message.id method="POST")

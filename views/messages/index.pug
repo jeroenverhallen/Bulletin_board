@@ -1,0 +1,15 @@
+extends ../application
+
+block content
+    .container
+        h1 New post
+        hr
+        form(action="messages/" method="POST")
+            div(clas="form-group")
+                label Title
+                input(type="text" name="title" class="form-control"))
+            div(class="form-group")
+                label(for="message-body") Body
+                textarea(name="body" class="form-control" rows=5 id="message-body")
+            div(class="form-group text-xs-right")
+            button(type="submit" class="btn btn-success btn-lg btn-block") Submit
