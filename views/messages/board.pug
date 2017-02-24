@@ -16,3 +16,5 @@ block content
                         .row
                             col-xs-3
                                 form(action="/messages/" + message.id method="POST")
+                                    input(type='hidden', name='_method', value='DELETE')
+                                    button(type="submit" class="btn btn-danger btn-block" data-message=message.id) DELETE

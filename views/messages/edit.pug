@@ -1,0 +1,16 @@
+extends ../application.pug
+
+block content
+  .container
+    h1 Edit Form
+    hr
+    form(action="/messages/" + message.id method="POST")
+      input(type="hidden" name="_method" value="PUT")
+      div(class="form-group")
+        label(for="message-title") Title
+        input(name="title" type="text" class="form-control" id="message-title" value=message.title)
+      div(class="form-group")
+        label(for="message-body") Body
+        textarea(name="body" class="form-control" rows=5 id="message-body")= message.body
+      div(class="form-group text-xs-right")
+        button(type="submit" class="btn btn-lg btn-success") Submit
