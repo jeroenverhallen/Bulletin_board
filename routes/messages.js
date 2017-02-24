@@ -31,13 +31,13 @@ var message = sequelize.define('message', {
   });
 });
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', (request, response) => {
   message.findOne({
     where: {
-      id: req.params.id
+      id: request.params.id
     }
   }).then((message) => {
-    res.render('messages/edit', { message: message });
+    response.render('messages/edit', { message: message });
   });
 });
 
